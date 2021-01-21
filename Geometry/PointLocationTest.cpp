@@ -4,26 +4,14 @@ int main(){
     int t;
     cin>>t;
     while(t--){
-    double a[6];
-    for(int i=0;i<6;i++)
-        cin>>a[i];
-    if((a[2]-a[0])!=0){
-    if( (a[3]-a[1])/(a[2]-a[0])-(a[5]-a[3])/(a[4]-a[2])>0.0000001)
+    int x1,x2,x3,y1,y2,y3;
+    cin>>x1>>y1>>x2>>y2>>x3>>y3;
+    x2-=x1;x3-=x1;
+    y2-=y1;y3-=y1;
+    if((x2*y3)-(x3*y2)>0)
     cout<<"LEFT"<<endl;
-    if((a[3]-a[1])/(a[2]-a[0])-(a[5]-a[3])/(a[4]-a[2])<-0.0000001)
+    else if((x2*y3)-(x3*y2)<0)
     cout<<"RIGHT"<<endl;
-    if (abs((a[3]-a[1])/(a[2]-a[0])-(a[5]-a[3])/(a[4]-a[2]))<0.0000001)
-    cout<<"TOUCH"<<endl;
-    }
-    else
-    {
-        if(a[4]>a[0])
-        cout<<"RIGHT"<<endl;
-        else if(a[4]<a[0])
-        cout<<"LEFT"<<endl;
-        else
-        cout<<"TOUCH"<<endl;
-    }
-
+    else cout<<"TOUCH"<<endl;
 }
 }
